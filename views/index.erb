@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <%= css :application %>
+  <%= js :application %>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>코딧잭 - CoditJack</title>
+</head>
+<body>
+    <div class='page'>
+      <h1>코딧잭 - CoditJack</h1>
+      <div style="position: fixed; top: 10px; right: 10px;">
+        <a href="#modal-rule" class="btn pure-button">룰 설명</a>
+        <a href="#modal-about" class="btn pure-button">대하여</a>
+      </div>
+
+      <div class="ingame">
+        <h3>딜러 카드</h3>
+        <div class='dealer-cards'>
+          <div class='card card1'></div>
+          <div class='card flipped card2'></div>
+          <div class='new-cards'></div>
+          <div class='clear'></div>
+          <div id='dealerTotal' class='dealer-total'></div>
+        </div>
+        <div class='clear'></div>
+
+        <!-- div.controller -->
+        <div class='buttons'>
+        	<div class='btn button-secondary pure-button' id='hit'>힛</div>
+        	<div class='btn button-secondary pure-button' id='stand'>스탠드</div>
+      	</div>
+        <!-- div.controller -->
+
+        <div style="position: fixed; top: 50%; right: 20%;" id='message' class='message'></div>
+
+        <h3>내 카드</h3>
+        <div class='player-cards'>
+          <div class='card card1'></div>
+          <div class='card card2'></div>
+          <div class='new-cards'></div>
+        	<div class='clear'></div>
+          <div id='playerTotal' class='player-total'></div>
+        </div>
+
+      	<div class='betting-area'>
+          <div class="pure-g">
+            <div class="pure-u-1-2">
+              <b style="font-size: 18px;">베팅 금액</b>
+              <div id='bet' class='bet money'>0</div>
+            </div>
+            <div class="pure-u-1-2">
+              <b style="font-size: 18px;">내 자산</b>
+              <div id='money' class='money'>500</div>
+              <div class='clear'></div>
+            </div>
+          </div>
+          <form class="pure-form">
+            <div class='btn button-error pure-button' id='all'>올인</div>
+        		<div class='btn button-success pure-button' id='more10'>+10</div>
+        		<div class='btn button-warning pure-button' id='less10'>-10</div>
+            <div class='btn button-success pure-button' id='more100'>+100</div>
+        		<div class='btn button-warning pure-button' id='less100'>-100</div>
+          </form>
+      	  <div class='clear'></div>
+      	</div>
+      </div>
+      <div class='clear'></div>
+
+      <!-- 모달 -->
+      <div class="modal" id="modal-rule" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-header">
+            <h2>블랙잭 룰 설명</h2>
+            <a href="#close" class="btn-close" aria-hidden="true">×</a> <!--CHANGED TO "#close"-->
+          </div>
+          <div class="modal-body">
+            <b><p>** 딜러 규칙 **</p></b>
+            <p>딜러는 16 이하면 무조건 히트, 17 이상이면 무조건 스탠드한다.</p>
+            <b><p>힛(Hit) / 스탠드(Stand)</p></b>
+            <p>처음 2장의 상태에서 카드를 더 뽑는 것을 힛, 그냥 뽑지 않고 턴을 종료하는 것을 스탠드라고 부른다.</p>
+            <b><p>버스트(Bust)</p></b>
+            <p>카드 총합이 21을 넘는 경우. 플레이어가 버스트 당하면 경기 흐름에 상관없이 바로 배당금을 잃는다.</p>
+            <b><p>푸시(Push)</p></b>
+            <p>딜러와 플레이어의 총합이 같을 경우 베팅금을 그대로 다시 돌려받는다.</p>
+            <p style="color: gray; font-size: 0.8em;">* 스플릿, 더블 다운, 인셔런스, 블랙잭, 이븐 머니, 서렌더 등의 룰은 적용되지 않습니다.</p>
+          </div>
+          <div class="modal-footer">
+            <a href="#close" class="btn">응 돌아가</a>  <!--CHANGED TO "#close"-->
+          </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal" id="modal-about" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-header">
+            <h2>이 게임에 대하여</h2>
+            <a href="#close" class="btn-close" aria-hidden="true">×</a>
+          </div>
+          <div class="modal-body">
+            <p style="text-align: center; font-size: 1.5em;">21233 전현승</p>
+            <p style="text-align: center; font-size: 0.5em; color: gray;">CodIT 2016 / 소프트웨어, 세상을 변화시키다.</p>
+          </div>
+          <div class="modal-footer">
+            <a href="#close" class="btn">응 돌아가</a>
+          </div>
+          </div>
+        </div>
+      </div>
+      <!-- 모달 -->
+    </div>
+</body>
+</html>
